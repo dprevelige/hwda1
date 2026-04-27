@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "http://localhost:8888/honeywell-full.html",
+  "path": "honeywell-full",
+  "timestamp": "2026-04-27T14:55:19.896Z",
+  "title": "Honeywell - The Future Is What We Make It",
+  "template": "homepage",
+  "blocks": [
+    "tabs"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "url": "https://www.honeywell.com/us/en/automation",
+  "path": "us/en/automation",
+  "timestamp": "2026-04-27T17:24:04.404Z",
+  "error": "page.goto: Navigation to \"https://www.honeywell.com/us/en/automation\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://www.honeywell.com/us/en/automation\", waiting until \"domcontentloaded\"\n",
+  "errorStack": "page.goto: Navigation to \"https://www.honeywell.com/us/en/automation\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://www.honeywell.com/us/en/automation\", waiting until \"domcontentloaded\"\n\n    at processUrl (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:260:18)\n    at async main (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:457:22)"
+}

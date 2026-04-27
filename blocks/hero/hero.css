@@ -1,3 +1,11 @@
+.hero-container {
+  margin-bottom: 0;
+}
+
+.hero-container + .section {
+  margin-top: 40px;
+}
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,33 +13,79 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 60px 24px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+.hero::after {
+  content: '';
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  background: linear-gradient(135deg, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 30%) 100%);
+  z-index: 1;
 }
 
-.hero img {
+.hero > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero > div:last-child {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero > div:first-child picture,
+.hero > div:first-child div {
+  height: 100%;
+}
+
+.hero > div:first-child img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+.hero h1 {
+  color: var(--white);
+  margin-top: 0;
+  max-width: 600px;
+}
+
+.hero p {
+  color: var(--white);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.hero .button-wrapper {
+  margin-top: 16px;
+}
+
+.hero a.button:any-link {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--white);
+}
+
+.hero a.button:hover {
+  background-color: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
+}
+
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 80px 32px;
+    min-height: 500px;
   }
 }

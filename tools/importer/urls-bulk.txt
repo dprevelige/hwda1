@@ -1,0 +1,5 @@
+http://localhost:8888/automation.html
+http://localhost:8888/energy-transition.html
+http://localhost:8888/future-of-aviation.html
+http://localhost:8888/industries.html
+http://localhost:8888/customer-stories.html

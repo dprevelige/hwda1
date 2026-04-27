@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "url": "https://www.honeywell.com/us/en/customer-stories",
+  "path": "us/en/customer-stories",
+  "timestamp": "2026-04-27T17:24:21.791Z",
+  "error": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.honeywell.com/us/en/customer-stories\nCall log:\n  - navigating to \"https://www.honeywell.com/us/en/customer-stories\", waiting until \"domcontentloaded\"\n",
+  "errorStack": "page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.honeywell.com/us/en/customer-stories\nCall log:\n  - navigating to \"https://www.honeywell.com/us/en/customer-stories\", waiting until \"domcontentloaded\"\n\n    at processUrl (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:260:18)\n    at async main (/home/node/.excat-marketplace/excat/skills/excat-content-import/scripts/run-bulk-import.js:457:22)"
+}
