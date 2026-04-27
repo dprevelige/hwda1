@@ -1,0 +1,155 @@
+.tabs .tabs-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border-bottom: 2px solid #dadada;
+  scrollbar-width: none;
+}
+
+.tabs .tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs .tabs-list button {
+  flex: 0 0 auto;
+  margin: 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition-base), border-color var(--transition-base);
+}
+
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button:hover {
+  color: var(--accent-primary);
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background-color: transparent;
+}
+
+.tabs .tabs-panel {
+  padding: 24px 0;
+  border: none;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs .tabs-panel > div p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+.tabs .tabs-panel > div a {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.5px;
+}
+
+/* nested cards inside tab panels (not auto-decorated) */
+
+/* override max-width on p that wraps nested cards */
+.tabs .tabs-panel > div p:has(.cards) {
+  max-width: unset;
+}
+
+.tabs .tabs-panel .cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.tabs .tabs-panel .cards > div {
+  background-color: var(--background-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tabs .tabs-panel .cards > div > div:first-child {
+  line-height: 0;
+}
+
+.tabs .tabs-panel .cards > div > div:first-child img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.tabs .tabs-panel .cards > div > div:last-child {
+  padding: 16px 20px;
+}
+
+.tabs .tabs-panel .cards > div > div:last-child p {
+  max-width: unset;
+}
+
+@media (width >= 600px) {
+  .tabs .tabs-panel .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* pill variant - rounded button style tabs */
+.tabs.pill .tabs-list {
+  border-bottom: none;
+  gap: 12px;
+}
+
+.tabs.pill .tabs-list button {
+  border: 2px solid var(--dark-color);
+  border-radius: 24px;
+  padding: 10px 24px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: var(--body-font-size-m);
+}
+
+.tabs.pill .tabs-list button:hover {
+  background-color: var(--dark-color);
+  color: var(--white);
+}
+
+.tabs.pill .tabs-list button[aria-selected='true'] {
+  background-color: var(--dark-color);
+  color: var(--white);
+  border-color: var(--dark-color);
+  font-weight: 700;
+}
+
+@media (width >= 900px) {
+  .tabs .tabs-list button {
+    font-size: var(--body-font-size-s);
+    padding: 16px 24px;
+  }
+
+  .tabs.pill .tabs-list button {
+    font-size: var(--body-font-size-m);
+    padding: 10px 24px;
+  }
+
+  .tabs .tabs-panel .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

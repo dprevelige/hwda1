@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "http://localhost:8888/future-of-aviation.html",
+  "path": "future-of-aviation",
+  "timestamp": "2026-04-27T17:28:09.324Z",
+  "title": "Explore the Future of Aviation with Honeywell",
+  "template": "homepage",
+  "blocks": [
+    "tabs"
+  ]
+}

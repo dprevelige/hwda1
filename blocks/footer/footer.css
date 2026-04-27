@@ -1,20 +1,89 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: var(--dark-color);
+  color: var(--white);
+  font-size: var(--body-font-size-s);
 }
 
-footer .footer > div {
+footer .footer > div > div {
   margin: auto;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   padding: 40px 24px 24px;
+}
+
+footer .footer > div > div:last-of-type {
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer p strong {
+  display: block;
+  margin-top: 24px;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+
+footer .footer > div > div:first-of-type > div > p:first-child strong {
+  margin-top: 0;
+}
+
+footer .footer ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+footer .footer li {
+  margin-bottom: 6px;
+}
+
+footer .footer > div > div:first-of-type a:any-link {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  transition: color var(--transition-base);
+}
+
+footer .footer > div > div:first-of-type a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+footer .footer > div > div:last-of-type p {
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 70%);
+}
+
+footer .footer > div > div:last-of-type a:any-link {
+  color: rgb(255 255 255 / 70%);
+  font-size: var(--body-font-size-xs);
+}
+
+footer .footer > div > div:last-of-type a:hover {
+  color: var(--white);
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer > div > div {
+    padding: 48px 32px 24px;
+  }
+
+  footer .footer > div > div:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .footer > div > div:first-of-type > div > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
   }
 }

@@ -4,6 +4,7 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 header nav {
@@ -56,6 +57,11 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: var(--accent-primary);
 }
 
 /* hamburger */
@@ -174,7 +180,9 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 header nav .nav-sections ul > li > ul {
@@ -183,6 +191,8 @@ header nav .nav-sections ul > li > ul {
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 @media (width >= 900px) {
@@ -209,8 +219,8 @@ header nav .nav-sections ul > li > ul > li {
     top: 0.5em;
     right: 2px;
     transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border: 2px solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
@@ -228,28 +238,31 @@ header nav .nav-sections ul > li > ul > li {
     margin: 0;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li {
+  header nav .nav-sections ul > li {
     flex: 0 1 auto;
     position: relative;
+    font-size: var(--body-font-size-s);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
+  header nav .nav-sections ul > li > ul {
     display: none;
     position: relative;
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
+  header nav .nav-sections ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 220px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--background-color);
     white-space: initial;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+    border-radius: var(--button-border-radius);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
+  header nav .nav-sections ul > li > ul::before {
     content: '';
     position: absolute;
     top: -8px;
@@ -258,15 +271,32 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--background-color);
   }
 
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
+  header nav .nav-sections ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections ul > li > ul > li a:hover {
+    color: var(--accent-primary);
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+header nav .nav-tools a.button:any-link {
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--white);
+  font-size: var(--body-font-size-xs);
+  padding: 8px 16px;
+}
+
+header nav .nav-tools a.button:hover {
+  background-color: var(--accent-primary-hover);
+  border-color: var(--accent-primary-hover);
 }
