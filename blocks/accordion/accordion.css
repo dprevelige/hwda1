@@ -1,0 +1,43 @@
+.accordion details {
+  border-bottom: 1px solid #dadada;
+}
+
+.accordion summary {
+  padding: 20px 40px 20px 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--accent-primary);
+  transition: transform var(--transition-base);
+}
+
+.accordion details[open] summary::after {
+  content: '−';
+}
+
+.accordion .accordion-content {
+  padding: 0 0 20px;
+}
+
+.accordion .accordion-content p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
