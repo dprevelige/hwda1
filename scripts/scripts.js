@@ -44,6 +44,34 @@ async function loadFonts() {
 }
 
 /**
+ * Converts links to Dynamic Media / Scene7 URLs into picture elements.
+ * Matches links whose href contains scene7.com or honeywell.scene7.com.
+ * The link text becomes the alt attribute of the image.
+ * @param {Element} main The container element
+ */
+function buildDynamicMediaImages(main) {
+  const dmLinks = main.querySelectorAll('a[href*="scene7.com"], a[href*="/is/image/"]');
+  dmLinks.forEach((a) => {
+    const { href } = a;
+    const alt = a.textContent.trim();
+    const p = a.closest('p');
+
+    const picture = document.createElement('picture');
+    const img = document.createElement('img');
+    img.src = href;
+    img.alt = alt;
+    img.loading = 'lazy';
+    picture.append(img);
+
+    if (p && p.childNodes.length === 1) {
+      p.replaceWith(picture);
+    } else {
+      a.replaceWith(picture);
+    }
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -67,6 +95,7 @@ function buildAutoBlocks(main) {
       });
     }
 
+    buildDynamicMediaImages(main);
     buildHeroBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
