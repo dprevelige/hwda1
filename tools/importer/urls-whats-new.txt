@@ -1,0 +1,6 @@
+http://localhost:8888/energy-storage.html
+http://localhost:8888/gas-detection.html
+http://localhost:8888/ot-cybersecurity.html
+http://localhost:8888/hotel-future.html
+http://localhost:8888/carbon-capture.html
+http://localhost:8888/dangote.html
